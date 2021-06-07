@@ -1,6 +1,4 @@
 import { Box, Button, Dialog, DialogActions, DialogContent, DialogTitle, TextField } from '@material-ui/core';
-// import { DateTimePicker, MuiPickersUtilsProvider } from '@material-ui/pickers';
-// import MomentUtils from '@date-io/moment';
 import React from 'react';
 import { useDispatch } from 'react-redux';
 import { IRoom } from '../../models';
@@ -17,11 +15,9 @@ interface IProps {
 export const AddReservationModal: React.FC<IProps> = ({ isOpen, onClose, room }) => {
     const dispatch = useDispatch();
     const [reservedBy, setReservedBy] = React.useState('');
-    // const [selectedDate, handleDateChange] = React.useState(new Date());
     const [from, setFrom] = React.useState('2021-06-03T11:30');
     const [to, setTo] = React.useState('2021-06-03T12:30');
     const [notes, setNotes] = React.useState('');
-    // setFrom(selectedDate);
 
     const handleSubmit = () => {
         if (
@@ -64,15 +60,6 @@ export const AddReservationModal: React.FC<IProps> = ({ isOpen, onClose, room })
                             value={from}
                             onChange={(evt) => setFrom(evt.target.value)}
                         />
-                        {/* <MuiPickersUtilsProvider utils={MomentUtils}>
-                            <DateTimePicker
-                                value={selectedDate}
-                                disablePast
-                                onChange={handleDateChange}
-                                label="From"
-                                showTodayButton
-                            />
-                        </MuiPickersUtilsProvider> */}
                     </Box>
                     <Box mb="24px">
                         <TextField
